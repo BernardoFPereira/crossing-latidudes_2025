@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmimn1y5jvm0l"]
+
+[ext_resource type="Script" uid="uid://dklv762g16xd7" path="res://character_body_3d.gd" id="1_u52ul"]
+[ext_resource type="Script" uid="uid://b1kfpqn8cmhhl" path="res://character_rig.gd" id="1_vonw3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vonw3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oi3di"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u52ul"]
+sky_top_color = Color(0.319579, 0.666558, 0.834187, 1)
+sky_horizon_color = Color(1.61238e-06, 0.32532, 0.440399, 1)
+sky_curve = 0.227357
+ground_bottom_color = Color(0.0756791, 0.167912, 0.102274, 1)
+ground_horizon_color = Color(0.0854505, 0.330252, 0.437612, 1)
+ground_curve = 0.0527803
+
+[sub_resource type="Sky" id="Sky_vonw3"]
+sky_material = SubResource("ProceduralSkyMaterial_u52ul")
+
+[sub_resource type="Environment" id="Environment_oi3di"]
+background_mode = 2
+sky = SubResource("Sky_vonw3")
+
+[node name="Level" type="Node"]
+
+[node name="Blocks" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Blocks"]
+use_collision = true
+size = Vector3(17, 1, 16)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1427, -5.5)
+use_collision = true
+size = Vector3(17, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Blocks"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18206, 2.63235, -1.99643)
+use_collision = true
+polygon = PackedVector2Array(-3.20877, -2.10264, 0.995761, 2.00569, 1, 1, -2.29129, -2.10402)
+depth = 2.3
+
+[node name="CharacterRig" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511923, 0)
+script = ExtResource("1_vonw3")
+player = NodePath("CharacterBody3D")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="CharacterRig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0878806, 3.61272)
+floor_max_angle = 1.0472
+floor_snap_length = 0.5
+script = ExtResource("1_u52ul")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterRig/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_vonw3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterRig/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_oi3di")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterRig"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 6.18119, 10.6602)
+fov = 65.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oi3di")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, -0.0669873, -0.25, 0.25, 0.491482, 0.834234, 0.0669873, -0.868308, 0.491482, -9, 12, 9)
