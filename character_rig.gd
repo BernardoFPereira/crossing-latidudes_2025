@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position.y = lerp(global_position.y, target.global_position.y, delta)
+	global_position.y = lerp(global_position.y, target.global_position.y, delta * 2)
 
 func switch_target(new_target):
 	target = new_target
