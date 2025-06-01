@@ -4,6 +4,7 @@
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_45n6u")
+metadata/_edit_group_ = true
 
 [node name="Possessable" type="RigidBody3D" parent="."]
 
