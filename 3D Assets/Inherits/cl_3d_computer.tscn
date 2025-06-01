@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dco2ubx2theat"]
+
+[ext_resource type="PackedScene" uid="uid://p3grh8qst4yb" path="res://3D Assets/3DParents/CL3D_Computer.fbx" id="1_q8vqf"]
+
+[node name="CL3D_Computer" instance=ExtResource("1_q8vqf")]

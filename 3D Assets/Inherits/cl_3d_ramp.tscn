@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xmjex8syll51"]
+
+[ext_resource type="PackedScene" uid="uid://bfta1qnc3e3g6" path="res://3D Assets/3DParents/CL3D_Ramp.fbx" id="1_dcplh"]
+[ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="2_hspgn"]
+
+[node name="CL3D_Ramp" instance=ExtResource("1_dcplh")]
+
+[node name="Ramp" parent="." index="0"]
+material_override = ExtResource("2_hspgn")

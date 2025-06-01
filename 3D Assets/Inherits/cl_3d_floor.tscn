@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dklfnnnbysa2w"]
+
+[ext_resource type="PackedScene" uid="uid://dajqbk2ulanqv" path="res://3D Assets/3DParents/CL3D_Floor.fbx" id="1_vtiko"]
+[ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="2_7dxle"]
+
+[node name="CL3D_Floor" instance=ExtResource("1_vtiko")]
+
+[node name="Floor" parent="." index="0"]
+material_override = ExtResource("2_7dxle")
