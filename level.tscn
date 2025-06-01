@@ -150,19 +150,25 @@ use_collision = true
 size = Vector3(22, 1, 16.937)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0652, 10.0101, 0.238042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0652, 10.1819, 0.238042)
 material_override = ExtResource("2_ait7k")
 use_collision = true
-size = Vector3(0.381836, 21, 16.9276)
+size = Vector3(0.381836, 21.3436, 16.9276)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.02, 10.0833, 0.719632)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.02, 10.2791, 0.719632)
 material_override = ExtResource("2_ait7k")
 use_collision = true
-size = Vector3(0.381836, 21, 17.0927)
+size = Vector3(0.381836, 21.3916, 17.0927)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.139911, 10.0443, -8.03398)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.139911, 10.2445, -8.03398)
+material_override = ExtResource("2_ait7k")
+use_collision = true
+size = Vector3(0.381836, 21.4004, 22.3281)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Blocks"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, -0.139911, 20.9015, 0.96602)
 material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(0.381836, 21, 22.3281)
@@ -646,6 +652,24 @@ shape = SubResource("BoxShape3D_n6hdu")
 stream = ExtResource("20_42xju")
 volume_db = -25.0
 autoplay = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20.8301, 0)
+light_color = Color(0.877178, 0.915796, 0.977938, 1)
+light_size = 1.155
+shadow_enabled = true
+spot_range = 31.748
+spot_attenuation = 0.05
+spot_angle = 72.45
+spot_angle_attenuation = 6.72717
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9.20978, 16.9976, -6.55614)
+shadow_enabled = true
+spot_range = 9.003
+spot_attenuation = 0.05
+spot_angle = 40.3
+spot_angle_attenuation = 0.63728
 
 [connection signal="mouse_entered" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_exited"]
