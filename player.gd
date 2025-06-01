@@ -2,7 +2,8 @@ extends CharacterBody3D
 class_name Player
 
 @export var move_speed = 5.0
-@export var lift_power := 50.0
+@export var lift_power := 40.0
+@export var max_lift_power := 200.0
 
 @onready var camera_ray: RayCast3D = $"../Camera3D/CameraRay"
 
@@ -96,12 +97,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action("lift_object"):
 		if state == States.CONTROLLING:
-			if vertical_force < lift_power:
+			if abs(vertical_force) < max_lift_power:
 				vertical_force += lift_power
 			
 	if event.is_action("lower_object"):
 		if state == States.CONTROLLING:
-			if vertical_force < lift_power:
+			if abs(vertical_force) < max_lift_power:
 				vertical_force -= lift_power
 			
 	if event.is_action_released("lift_object"):

@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cad2jo62bpiba"]
-
-[ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="1_45n6u"]
+[gd_scene format=3 uid="uid://cad2jo62bpiba"]
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_45n6u")
 metadata/_edit_group_ = true
 
 [node name="Possessable" type="RigidBody3D" parent="."]

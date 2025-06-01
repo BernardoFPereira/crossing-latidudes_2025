@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="crossing-latitudes_2025"
-run/main_scene="uid://cmimn1y5jvm0l"
+run/main_scene="uid://emw5pmq8fxth"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

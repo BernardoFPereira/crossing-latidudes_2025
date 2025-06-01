@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=4 uid="uid://cmimn1y5jvm0l"]
+[gd_scene load_steps=24 format=4 uid="uid://cmimn1y5jvm0l"]
 
+[ext_resource type="Script" uid="uid://qf3yjae6so34" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="Script" uid="uid://dklv762g16xd7" path="res://player.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://b1kfpqn8cmhhl" path="res://character_rig.gd" id="1_vonw3"]
 [ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="3_oi3di"]
@@ -69,7 +70,21 @@ _surfaces = [{
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f2txt"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ainy"]
+bg_color = Color(0, 0, 0, 0.298039)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6hdu"]
+font_size = 24
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n6hdu"]
+size = Vector3(1.68628, 2.88293, 1)
+
 [node name="Level" type="Node"]
+script = ExtResource("1_n6hdu")
 
 [node name="Blocks" type="Node" parent="."]
 
@@ -89,22 +104,22 @@ use_collision = true
 size = Vector3(22, 1, 16.937)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0652, 6.14934, 0.238042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0652, 10.0101, 0.238042)
 material_override = ExtResource("5_1ainy")
 use_collision = true
-size = Vector3(0.381836, 13.2785, 16.9276)
+size = Vector3(0.381836, 21, 16.9276)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.02, 6.18596, 0.802185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.02, 10.0833, 0.719632)
 material_override = ExtResource("5_1ainy")
 use_collision = true
-size = Vector3(0.381836, 13.2053, 16.9276)
+size = Vector3(0.381836, 21, 17.0927)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.139911, 6.16643, -8.03398)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.139911, 10.0443, -8.03398)
 material_override = ExtResource("5_1ainy")
 use_collision = true
-size = Vector3(0.381836, 13.2443, 22.3281)
+size = Vector3(0.381836, 21, 22.3281)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90391, 3.7427, -5.5)
@@ -125,7 +140,7 @@ use_collision = true
 size = Vector3(3.9, 1, 5)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.56099, 6.7495, -7.68285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.20967, 11.5718, -7.68285)
 use_collision = true
 size = Vector3(2.4939, 4.17584, 0.498535)
 
@@ -175,6 +190,8 @@ shadow_enabled = true
 [node name="Plank" type="RigidBody3D" parent="Posessables"]
 transform = Transform3D(0.999578, 0.0290209, 0, -0.0290209, 0.999578, 0, 0, 0, 1, 8.72773, 9.90656, -5.40052)
 collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 freeze_mode = 1
 script = ExtResource("3_oi3di")
 metadata/_edit_group_ = true
@@ -191,13 +208,11 @@ mesh = ExtResource("4_f2txt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Plank"]
 shape = SubResource("ConvexPolygonShape3D_n6hdu")
 
-[node name="RayCast3D" type="RayCast3D" parent="Posessables/Plank"]
-target_position = Vector3(0, -10, 0)
-hit_from_inside = true
-
 [node name="FileCabinet" type="RigidBody3D" parent="Posessables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37841, 5.5901, -7.25188)
 collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 freeze_mode = 1
 script = ExtResource("3_oi3di")
 metadata/_edit_group_ = true
@@ -213,12 +228,11 @@ mesh = SubResource("ArrayMesh_f2txt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/FileCabinet"]
 shape = SubResource("ConvexPolygonShape3D_1ainy")
 
-[node name="RayCast3D" type="RayCast3D" parent="Posessables/FileCabinet"]
-target_position = Vector3(0, -10, 0)
-
 [node name="FileCabinet2" type="RigidBody3D" parent="Posessables"]
-transform = Transform3D(0.970494, 0, 0.241126, 0, 1, 0, -0.241126, 0, 0.970494, -9.44033, 5.5901, -7.25188)
+transform = Transform3D(0.970494, 0, 0.241126, 0, 1, 0, -0.241126, 0, 0.970494, -9.92074, 5.5901, -7.25188)
 collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 freeze_mode = 1
 script = ExtResource("3_oi3di")
 metadata/_edit_group_ = true
@@ -234,12 +248,11 @@ mesh = SubResource("ArrayMesh_f2txt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/FileCabinet2"]
 shape = SubResource("ConvexPolygonShape3D_1ainy")
 
-[node name="RayCast3D" type="RayCast3D" parent="Posessables/FileCabinet2"]
-target_position = Vector3(0, -10, 0)
-
 [node name="Box" type="RigidBody3D" parent="Posessables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96038, 1.75168, -1.44657)
 collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 script = ExtResource("3_oi3di")
 metadata/_edit_group_ = true
 
@@ -253,12 +266,98 @@ mesh = SubResource("ArrayMesh_0b4ue")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Box"]
 shape = SubResource("ConvexPolygonShape3D_f2txt")
 
-[node name="RayCast3D" type="RayCast3D" parent="Posessables/Box"]
-target_position = Vector3(0, -10, 0)
-
 [node name="Possessable" parent="Posessables" instance=ExtResource("6_1ainy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12957, 0.340493)
-collision_mask = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WinMenu" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -172.0
+offset_right = 147.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/WinMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ainy")
+
+[node name="Label" type="Label" parent="CanvasLayer/WinMenu/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = 300.0
+offset_right = 86.0
+offset_bottom = 323.0
+grow_horizontal = 2
+text = "Thank you for playing!"
+
+[node name="Label2" type="Label" parent="CanvasLayer/WinMenu/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = 37.0
+offset_right = 86.0
+offset_bottom = 71.0
+grow_horizontal = 2
+text = "YOU DID IT!"
+label_settings = SubResource("LabelSettings_n6hdu")
+horizontal_alignment = 1
+
+[node name="ButtonAgain" type="Button" parent="CanvasLayer/WinMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -50.0
+offset_right = 74.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Again?"
+
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/WinMenu/Panel"]
+self_modulate = Color(0.926334, 0.535794, 0.577975, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 44.0
+offset_right = 32.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
+
+[node name="WinArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5239, 10.7681, -7.55953)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34314, 0.370178, 0)
+shape = SubResource("BoxShape3D_n6hdu")
 
 [connection signal="mouse_entered" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_exited"]
@@ -268,3 +367,6 @@ collision_mask = 3
 [connection signal="mouse_exited" from="Posessables/FileCabinet2" to="Posessables/FileCabinet2" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Posessables/Box" to="Posessables/Box" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Posessables/Box" to="Posessables/Box" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/WinMenu/Panel/ButtonAgain" to="." method="_on_button_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/WinMenu/Panel/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]

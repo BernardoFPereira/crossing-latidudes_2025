@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://emw5pmq8fxth"]
+
+[ext_resource type="Script" uid="uid://bqw3tqe5yi5w7" path="res://main_menu.gd" id="1_i26rj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjwba"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_i26rj"]
+font_size = 24
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i26rj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_top = 125.0
+offset_right = 61.5
+offset_bottom = 148.0
+grow_horizontal = 2
+text = "MIND BOGGERS"
+label_settings = SubResource("LabelSettings_kjwba")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -263.0
+offset_right = 284.0
+offset_bottom = -44.0
+grow_vertical = 0
+text = "Made by:
+  S1gnal
+  Beetldjuice
+  -Blaze-
+  Miikka
+  Sombra"
+label_settings = SubResource("LabelSettings_i26rj")
+
+[node name="ButtonStart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 28.0
+offset_right = 93.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START GAME"
+
+[node name="ButtonQuit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = 158.0
+offset_right = 66.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
+
+[connection signal="pressed" from="ButtonStart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
