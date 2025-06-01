@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cad2jo62bpiba"]
+
+[ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="1_45n6u"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f2txt"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Possessable" type="RigidBody3D"]
+script = ExtResource("1_45n6u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Highlight" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_f2txt")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -10, 0)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

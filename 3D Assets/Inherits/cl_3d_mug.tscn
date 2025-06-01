@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf4qpbr7spfk3"]
-
-[ext_resource type="PackedScene" uid="uid://ix4jyqq1ml6v" path="res://3D Assets/3DParents/CL3D_Mug.fbx" id="1_1poyk"]
-[ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="2_hwp8u"]
-
-[node name="CL3D_Mug" instance=ExtResource("1_1poyk")]
-
-[node name="Mug" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_hwp8u")

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://donrrqwhygtcc"]
-
-[ext_resource type="PackedScene" uid="uid://byquytuk6ar6u" path="res://3D Assets/3DParents/CL3D_Table2.fbx" id="1_q4yid"]
-[ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="2_5de5y"]
-
-[node name="CL3D_Table2" instance=ExtResource("1_q4yid")]
-
-[node name="Table2" parent="." index="0"]
-material_override = ExtResource("2_5de5y")
