@@ -2,13 +2,14 @@ extends CharacterBody3D
 class_name Player
 
 @export var move_speed = 5.0
+@export var lift_power := 50.0
 
 @onready var camera_ray: RayCast3D = $"../Camera3D/CameraRay"
 
 var jump_force = 4.5
 var possession_target: Possessable
 #var is_out_of_body := false
-
+var vertical_force := 0
 enum States {
 	IDLE,
 	WALK,
@@ -50,33 +51,58 @@ func handle_states(delta) -> void:
 			velocity.z = lerp(velocity.z, 0.0, delta * 4)
 		
 		States.WALK:
+			if !is_on_floor():
+				set_state(States.FALL)
 			if input_dir != Vector2.ZERO:
 				velocity = direction * move_speed
 			else:
 				set_state(States.IDLE)
 			
 		States.FALL:
+			if is_on_floor():
+				set_state(States.IDLE)
 			pass
 		
 		States.CONTROLLING:
-			velocity.x = lerp(velocity.x, 0.0, delta * 6)
-			velocity.z = lerp(velocity.z, 0.0, delta * 6)
-			if direction:
-				possession_target.global_position += direction * move_speed * delta
-				
+			if possession_target.state not in [possession_target.States.IDLE]:
+				velocity.x = lerp(velocity.x, 0.0, delta * 6)
+				velocity.z = lerp(velocity.z, 0.0, delta * 6)
+				if direction:
+					possession_target.linear_velocity.x = direction.x * move_speed
+					possession_target.linear_velocity.z = direction.z * move_speed
+				else:
+					possession_target.linear_velocity = Vector3.ZERO
+				if lift_power != 0.0:
+					possession_target.linear_velocity.y = vertical_force * delta * 2
+				else:
+					possession_target.linear_velocity = Vector3.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("posess") and possession_target != null:
 		set_state(States.CONTROLLING)
 		possession_target.set_state(possession_target.States.POSSESSED)
-		print()
 		#is_out_of_body = true
 		
 	if event.is_action_pressed("return_to_body"):
 		if possession_target != null:
 			set_state(States.WALK)
 			possession_target.set_state(possession_target.States.IDLE)
+			possession_target = null
 		#is_out_of_body = false
-
+	
+	if event.is_action("lift_object"):
+		if state == States.CONTROLLING:
+			if vertical_force < lift_power:
+				vertical_force += lift_power
+			
+	if event.is_action("lower_object"):
+		if state == States.CONTROLLING:
+			if vertical_force < lift_power:
+				vertical_force -= lift_power
+			
+	if event.is_action_released("lift_object"):
+		vertical_force = 0
+	if event.is_action_released("lower_object"):
+		vertical_force = 0
 #func get_possession_target() -> void:
 	#camera_ray.target_position = 

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://be4xjuh7q06d2"]
+
+[ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="1_mmykw"]
+[ext_resource type="Script" uid="uid://bd4yhxwuw10yb" path="res://height_cast.gd" id="2_b8uav"]
+
+[node name="Possessable" type="RigidBody3D"]
+script = ExtResource("1_mmykw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -10, 0)
+script = ExtResource("2_b8uav")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
