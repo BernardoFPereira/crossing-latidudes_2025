@@ -1,10 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://cmimn1y5jvm0l"]
+[gd_scene load_steps=20 format=4 uid="uid://cmimn1y5jvm0l"]
 
 [ext_resource type="Script" uid="uid://dklv762g16xd7" path="res://player.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://b1kfpqn8cmhhl" path="res://character_rig.gd" id="1_vonw3"]
 [ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="3_oi3di"]
 [ext_resource type="ArrayMesh" uid="uid://bm3wpcikwab8u" path="res://3D Assets/CL3D_Door.obj" id="4_f2txt"]
 [ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="5_1ainy"]
+[ext_resource type="PackedScene" uid="uid://cad2jo62bpiba" path="res://BasePossessable.tscn" id="6_1ainy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ainy"]
+size = Vector3(22, 12, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vonw3"]
 
@@ -69,35 +73,56 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 
 [node name="Blocks" type="Node" parent="."]
 
+[node name="InvisibleWall" type="StaticBody3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4.9)
+collision_layer = 2
+input_ray_pickable = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blocks/InvisibleWall"]
+shape = SubResource("BoxShape3D_1ainy")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.468506)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -0.468506)
+material_override = ExtResource("5_1ainy")
 use_collision = true
 size = Vector3(22, 1, 16.937)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0652, 6.14934, 0.238042)
+material_override = ExtResource("5_1ainy")
 use_collision = true
 size = Vector3(0.381836, 13.2785, 16.9276)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.02, 6.18596, 0.802185)
+material_override = ExtResource("5_1ainy")
 use_collision = true
 size = Vector3(0.381836, 13.2053, 16.9276)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.139911, 6.16643, -8.03398)
+material_override = ExtResource("5_1ainy")
 use_collision = true
 size = Vector3(0.381836, 13.2443, 22.3281)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90391, 4.1427, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90391, 3.7427, -5.5)
+material_override = ExtResource("5_1ainy")
 use_collision = true
 size = Vector3(6.20163, 1, 5)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89893, 4.1427, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59893, 6.3427, -5.5)
+material_override = ExtResource("5_1ainy")
 use_collision = true
 size = Vector3(8.03972, 1, 5)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.96879, 9.0427, -5.5)
+material_override = ExtResource("5_1ainy")
+use_collision = true
+size = Vector3(3.9, 1, 5)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.56099, 6.7495, -7.68285)
@@ -105,7 +130,8 @@ use_collision = true
 size = Vector3(2.4939, 4.17584, 0.498535)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Blocks"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.68678, 2.63235, -1.99643)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.68678, 2.23235, -1.99643)
+material_override = ExtResource("5_1ainy")
 use_collision = true
 polygon = PackedVector2Array(-3.20877, -2.10264, 0.995761, 2.00569, 1, 1, -2.29129, -2.10402)
 depth = 2.3
@@ -117,6 +143,7 @@ target = NodePath("CharacterBody3D")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="CharacterRig" groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0878806, 3.61272)
+collision_mask = 3
 floor_max_angle = 1.0472
 floor_snap_length = 0.5
 script = ExtResource("1_u52ul")
@@ -146,9 +173,11 @@ shadow_enabled = true
 [node name="Posessables" type="Node" parent="."]
 
 [node name="Plank" type="RigidBody3D" parent="Posessables"]
-transform = Transform3D(0.524922, -0.85115, 0, 0.85115, 0.524922, 0, 0, 0, 1, 9.18841, 7.44049, -5.40052)
+transform = Transform3D(0.999578, 0.0290209, 0, -0.0290209, 0.999578, 0, 0, 0, 1, 8.72773, 9.90656, -5.40052)
+collision_mask = 3
 freeze_mode = 1
 script = ExtResource("3_oi3di")
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/Plank"]
 mesh = ExtResource("4_f2txt")
@@ -168,8 +197,10 @@ hit_from_inside = true
 
 [node name="FileCabinet" type="RigidBody3D" parent="Posessables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37841, 5.5901, -7.25188)
+collision_mask = 3
 freeze_mode = 1
 script = ExtResource("3_oi3di")
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/FileCabinet"]
 mesh = SubResource("BoxMesh_oi3di")
@@ -187,8 +218,10 @@ target_position = Vector3(0, -10, 0)
 
 [node name="FileCabinet2" type="RigidBody3D" parent="Posessables"]
 transform = Transform3D(0.970494, 0, 0.241126, 0, 1, 0, -0.241126, 0, 0.970494, -9.44033, 5.5901, -7.25188)
+collision_mask = 3
 freeze_mode = 1
 script = ExtResource("3_oi3di")
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/FileCabinet2"]
 mesh = SubResource("BoxMesh_oi3di")
@@ -206,7 +239,9 @@ target_position = Vector3(0, -10, 0)
 
 [node name="Box" type="RigidBody3D" parent="Posessables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96038, 1.75168, -1.44657)
+collision_mask = 3
 script = ExtResource("3_oi3di")
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/Box"]
 mesh = SubResource("BoxMesh_0b4ue")
@@ -221,20 +256,9 @@ shape = SubResource("ConvexPolygonShape3D_f2txt")
 [node name="RayCast3D" type="RayCast3D" parent="Posessables/Box"]
 target_position = Vector3(0, -10, 0)
 
-[node name="Possessable" type="RigidBody3D" parent="Posessables"]
+[node name="Possessable" parent="Posessables" instance=ExtResource("6_1ainy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12957, 0.340493)
-script = ExtResource("3_oi3di")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/Possessable"]
-
-[node name="Highlight" type="MeshInstance3D" parent="Posessables/Possessable/MeshInstance3D"]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable"]
-shape = SubResource("ConvexPolygonShape3D_f2txt")
-
-[node name="RayCast3D" type="RayCast3D" parent="Posessables/Possessable"]
-target_position = Vector3(0, -10, 0)
+collision_mask = 3
 
 [connection signal="mouse_entered" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_exited"]
@@ -244,5 +268,3 @@ target_position = Vector3(0, -10, 0)
 [connection signal="mouse_exited" from="Posessables/FileCabinet2" to="Posessables/FileCabinet2" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Posessables/Box" to="Posessables/Box" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Posessables/Box" to="Posessables/Box" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Posessables/Possessable" to="Posessables/Possessable" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Posessables/Possessable" to="Posessables/Possessable" method="_on_mouse_exited"]
