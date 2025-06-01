@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="3_oi3di"]
 [ext_resource type="ArrayMesh" uid="uid://bm3wpcikwab8u" path="res://3D Assets/CL3D_Door.obj" id="4_f2txt"]
 [ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="5_1ainy"]
-[ext_resource type="PackedScene" uid="uid://cad2jo62bpiba" path="res://BasePossessable.tscn" id="6_1ainy"]
+[ext_resource type="PackedScene" uid="uid://be4xjuh7q06d2" path="res://BasePossessable2.tscn" id="7_n6hdu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ainy"]
 size = Vector3(22, 12, 1)
@@ -266,8 +266,7 @@ mesh = SubResource("ArrayMesh_0b4ue")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Box"]
 shape = SubResource("ConvexPolygonShape3D_f2txt")
 
-[node name="Possessable" parent="Posessables" instance=ExtResource("6_1ainy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12957, 0.340493)
+[node name="Possessable" parent="Posessables" instance=ExtResource("7_n6hdu")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
