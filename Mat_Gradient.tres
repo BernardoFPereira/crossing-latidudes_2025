@@ -5,7 +5,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_rsdlt")
-shader_parameter/color_bottom = Color(0, 0, 0, 1)
+shader_parameter/color_bottom = Color(0, 0, 0.352941, 1)
 shader_parameter/color_top = Color(0.767848, 0.845673, 1, 1)
 shader_parameter/min_height = -1.0
 shader_parameter/max_height = 1.0

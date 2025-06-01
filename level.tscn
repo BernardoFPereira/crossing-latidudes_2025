@@ -1,12 +1,12 @@
-[gd_scene load_steps=48 format=4 uid="uid://cmimn1y5jvm0l"]
+[gd_scene load_steps=47 format=4 uid="uid://cmimn1y5jvm0l"]
 
 [ext_resource type="Script" uid="uid://qf3yjae6so34" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="Script" uid="uid://dklv762g16xd7" path="res://player.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://b1kfpqn8cmhhl" path="res://character_rig.gd" id="1_vonw3"]
-[ext_resource type="Texture2D" uid="uid://6yn125w6x1es" path="res://CrossingLatitudes3DAssets_Checker.png" id="3_4c15r"]
+[ext_resource type="Material" uid="uid://48he73bkx51t" path="res://Mat_Gradient_Ground.tres" id="2_ait7k"]
+[ext_resource type="Material" uid="uid://bjr6iqhnu2h6k" path="res://Mat_Gradient_Door.tres" id="3_ait7k"]
 [ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="3_oi3di"]
 [ext_resource type="ArrayMesh" uid="uid://bm3wpcikwab8u" path="res://3D Assets/CL3D_Door.obj" id="4_f2txt"]
-[ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="5_1ainy"]
 [ext_resource type="Material" uid="uid://7tdhwampti3o" path="res://Mat_Gradient.tres" id="6_ait7k"]
 [ext_resource type="PackedScene" uid="uid://be4xjuh7q06d2" path="res://BasePossessable2.tscn" id="7_n6hdu"]
 [ext_resource type="ArrayMesh" uid="uid://6d06ibgv35mv" path="res://3D Assets/CL3D_BaseCube.obj" id="9_ait7k"]
@@ -22,9 +22,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ainy"]
 size = Vector3(22, 12, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoqsc"]
-albedo_texture = ExtResource("3_4c15r")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vonw3"]
 
@@ -147,55 +144,56 @@ shape = SubResource("BoxShape3D_1ainy")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -0.468506)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(22, 1, 16.937)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0652, 10.0101, 0.238042)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(0.381836, 21, 16.9276)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.02, 10.0833, 0.719632)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(0.381836, 21, 17.0927)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.139911, 10.0443, -8.03398)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(0.381836, 21, 22.3281)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90391, 3.7427, -5.5)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(6.20163, 1, 5)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59893, 6.3427, -5.5)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(8.03972, 1, 5)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.96879, 9.0427, -5.5)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 size = Vector3(3.9, 1, 5)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.20967, 11.5718, -7.68285)
-material_override = SubResource("StandardMaterial3D_aoqsc")
+material_override = ExtResource("3_ait7k")
 use_collision = true
 size = Vector3(2.4939, 4.17584, 0.498535)
+material = ExtResource("3_ait7k")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Blocks"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.68678, 2.23235, -1.99643)
-material_override = ExtResource("5_1ainy")
+material_override = ExtResource("2_ait7k")
 use_collision = true
 polygon = PackedVector2Array(-3.20877, -2.10264, 0.995761, 2.00569, 1, 1, -2.29129, -2.10402)
 depth = 2.3
@@ -232,7 +230,7 @@ target_position = Vector3(0, 0, 0)
 environment = SubResource("Environment_oi3di")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.786771, -0.605302, 0.120832, 0.25, 0.491482, 0.834233, -0.564351, -0.626143, 0.538009, -6.09842, 12, 5.13059)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.999999, 0, -1, -4.37114e-08, -6.09842, 12, -5.06941)
 shadow_enabled = true
 
 [node name="Posessables" type="Node" parent="."]
@@ -330,7 +328,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_mleqk")
 
 [node name="Possessable2" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 7.9, 1.9)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.2, 1.1, -0.7)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable2" index="0"]
 mesh = ExtResource("10_42xju")
@@ -350,7 +348,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_sl4om")
 
 [node name="Possessable4" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 7.9, -1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.4, -0.9)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable4" index="0"]
 mesh = ExtResource("11_v7sqt")
@@ -360,7 +358,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_dtg4e")
 
 [node name="Possessable5" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 7.9, 2.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.1, 1.1, -0.1)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable5" index="0"]
 mesh = ExtResource("12_ilwjd")
@@ -370,7 +368,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_ut2i6")
 
 [node name="Possessable6" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 5.8, -0.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.3, -0.8)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable6" index="0"]
 mesh = ExtResource("13_y3bce")
@@ -379,8 +377,28 @@ surface_material_override/0 = ExtResource("6_ait7k")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable6"]
 shape = SubResource("ConvexPolygonShape3D_0mnfp")
 
+[node name="Possessable19" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3, 5.5, -4.4)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable19" index="0"]
+mesh = ExtResource("13_y3bce")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable19"]
+shape = SubResource("ConvexPolygonShape3D_0mnfp")
+
+[node name="Possessable12" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 1.3, 3)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable12" index="0"]
+mesh = ExtResource("13_y3bce")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable12"]
+shape = SubResource("ConvexPolygonShape3D_0mnfp")
+
 [node name="Possessable7" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.6, 4, 1.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.6, 1.2, 1.5)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable7" index="0"]
 mesh = ExtResource("14_u3yai")
@@ -390,7 +408,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_qw2y7")
 
 [node name="Possessable8" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8, 1.5, 3.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 1.2, 3.1)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable8" index="0"]
 mesh = ExtResource("15_fj6e6")
@@ -400,7 +418,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_uuqa8")
 
 [node name="Possessable9" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 5.6, -0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 1.1, -0.7)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable9" index="0"]
 mesh = ExtResource("16_2h3vt")
@@ -410,7 +428,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_samc1")
 
 [node name="Possessable10" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 9.3, 1.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3, 5.4, -4.4)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable10" index="0"]
 mesh = ExtResource("17_yjxuc")
@@ -420,13 +438,73 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_oaehd")
 
 [node name="Possessable11" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 7.9, 2.3)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 1.1, -0.3)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable11" index="0"]
 mesh = ExtResource("18_hvubb")
 surface_material_override/0 = ExtResource("6_ait7k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable11"]
+shape = SubResource("ConvexPolygonShape3D_f8y3u")
+
+[node name="Possessable13" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 1.1, -7)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable13" index="0"]
+mesh = ExtResource("10_42xju")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable13"]
+shape = SubResource("ConvexPolygonShape3D_6btg4")
+
+[node name="Possessable14" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 1.1, -6.4)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable14" index="0"]
+mesh = ExtResource("12_ilwjd")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable14"]
+shape = SubResource("ConvexPolygonShape3D_ut2i6")
+
+[node name="Possessable15" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 1.1, -6.6)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable15" index="0"]
+mesh = ExtResource("18_hvubb")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable15"]
+shape = SubResource("ConvexPolygonShape3D_f8y3u")
+
+[node name="Possessable16" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 1.1, -7)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable16" index="0"]
+mesh = ExtResource("10_42xju")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable16"]
+shape = SubResource("ConvexPolygonShape3D_6btg4")
+
+[node name="Possessable17" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 1.1, -6.4)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable17" index="0"]
+mesh = ExtResource("12_ilwjd")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable17"]
+shape = SubResource("ConvexPolygonShape3D_ut2i6")
+
+[node name="Possessable18" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.1, -6.6)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable18" index="0"]
+mesh = ExtResource("18_hvubb")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable18"]
 shape = SubResource("ConvexPolygonShape3D_f8y3u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -537,8 +615,16 @@ shape = SubResource("BoxShape3D_n6hdu")
 [editable path="Posessables/Possessable4"]
 [editable path="Posessables/Possessable5"]
 [editable path="Posessables/Possessable6"]
+[editable path="Posessables/Possessable19"]
+[editable path="Posessables/Possessable12"]
 [editable path="Posessables/Possessable7"]
 [editable path="Posessables/Possessable8"]
 [editable path="Posessables/Possessable9"]
 [editable path="Posessables/Possessable10"]
 [editable path="Posessables/Possessable11"]
+[editable path="Posessables/Possessable13"]
+[editable path="Posessables/Possessable14"]
+[editable path="Posessables/Possessable15"]
+[editable path="Posessables/Possessable16"]
+[editable path="Posessables/Possessable17"]
+[editable path="Posessables/Possessable18"]

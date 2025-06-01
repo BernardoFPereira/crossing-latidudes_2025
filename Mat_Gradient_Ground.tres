@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://48he73bkx51t"]
+
+[ext_resource type="Shader" uid="uid://d2srk2co8x38o" path="res://ShdGradient.gdshader" id="1_n03ym"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_n03ym")
+shader_parameter/color_bottom = Color(0, 0, 0, 1)
+shader_parameter/color_top = Color(1, 0.360784, 0.317647, 1)
+shader_parameter/min_height = -10.0
+shader_parameter/max_height = 1.0
