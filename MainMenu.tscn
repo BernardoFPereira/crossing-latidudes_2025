@@ -27,7 +27,7 @@ offset_top = 125.0
 offset_right = 61.5
 offset_bottom = 148.0
 grow_horizontal = 2
-text = "MIND BOGGERS"
+text = "MIND BOGGER"
 label_settings = SubResource("LabelSettings_kjwba")
 
 [node name="Label2" type="Label" parent="."]
