@@ -4,14 +4,12 @@ class_name Possessable
 @onready var highlight: MeshInstance3D = $MeshInstance3D/Highlight
 @onready var ray_cast: RayCast3D = $RayCast3D
 @onready var timer: Timer = $Timer
-#@onready var rigid_body: RigidBody3D = $Possessable
 
 var selectable := false
 var player: Player
 
 enum States {
 	IDLE,
-	BEING_POSSESSED,
 	POSSESSED,
 }
 
@@ -30,14 +28,10 @@ func set_state(new_state: States) -> void:
 	state = new_state
 	
 	match state:
-		States.BEING_POSSESSED:
-			timer.start()
 		States.IDLE:
 			gravity_scale = 1
 			pass
 		States.POSSESSED:
-			if global_position.distance_to(player.global_position) > 30:
-				set_state(States.IDLE)
 			gravity_scale = 0
 			pass
 
@@ -45,19 +39,11 @@ func handle_states(delta):
 	match state:
 		States.IDLE:
 			pass
-		States.BEING_POSSESSED:
-			global_position.y += 3 * delta
-			#rigid_body.global_position = lerp(rigid_body.global_position, global_position, delta)
-			pass
 		States.POSSESSED:
-			#rigid_body.global_position = lerp(rigid_body.global_position, global_position, delta)
 			# Make thing float
 			#recalculate_height(delta)
 			pass
 	pass
-	
-#func float_object():
-	#pass
 	
 func recalculate_height(delta:float):
 	ray_cast.force_raycast_update()
@@ -85,7 +71,6 @@ func _on_mouse_exited() -> void:
 	
 	highlight.visible = false
 	selectable = false
-
 
 func _on_timer_timeout() -> void:
 	print("going to possessed")

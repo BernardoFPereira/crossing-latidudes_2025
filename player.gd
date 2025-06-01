@@ -10,6 +10,8 @@ var jump_force = 4.5
 var possession_target: Possessable
 #var is_out_of_body := false
 var vertical_force := 0
+var height_vector := Vector3.ZERO
+
 enum States {
 	IDLE,
 	WALK,
@@ -67,15 +69,17 @@ func handle_states(delta) -> void:
 			if possession_target.state not in [possession_target.States.IDLE]:
 				velocity.x = lerp(velocity.x, 0.0, delta * 6)
 				velocity.z = lerp(velocity.z, 0.0, delta * 6)
+				
 				if direction:
 					possession_target.linear_velocity.x = direction.x * move_speed
 					possession_target.linear_velocity.z = direction.z * move_speed
 				else:
-					possession_target.linear_velocity = Vector3.ZERO
-				if lift_power != 0.0:
-					possession_target.linear_velocity.y = vertical_force * delta * 2
+					possession_target.linear_velocity.x = move_toward(possession_target.linear_velocity.x, 0, delta * 12)
+					possession_target.linear_velocity.z = move_toward(possession_target.linear_velocity.z, 0, delta * 12)
+				if vertical_force != 0.0:
+					possession_target.linear_velocity.y = vertical_force * delta
 				else:
-					possession_target.linear_velocity = Vector3.ZERO
+					possession_target.linear_velocity.y = 0
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("posess") and possession_target != null:
@@ -104,5 +108,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		vertical_force = 0
 	if event.is_action_released("lower_object"):
 		vertical_force = 0
+		
 #func get_possession_target() -> void:
 	#camera_ray.target_position = 
