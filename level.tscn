@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cmimn1y5jvm0l"]
+[gd_scene load_steps=48 format=4 uid="uid://cmimn1y5jvm0l"]
 
 [ext_resource type="Script" uid="uid://qf3yjae6so34" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="Script" uid="uid://dklv762g16xd7" path="res://player.gd" id="1_u52ul"]
@@ -19,6 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://pkyekqswi6i3" path="res://3D Assets/CL3D_Table2.obj" id="16_2h3vt"]
 [ext_resource type="ArrayMesh" uid="uid://dh53yttd8160f" path="res://3D Assets/CL3D_Table3.obj" id="17_yjxuc"]
 [ext_resource type="ArrayMesh" uid="uid://bk310bbwbwjhg" path="res://3D Assets/CL3D_Table4.obj" id="18_hvubb"]
+[ext_resource type="AudioStream" uid="uid://6icw08a1sauu" path="res://Audio/s1gnal_-_ether.wav" id="20_42xju"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ainy"]
 size = Vector3(22, 12, 1)
@@ -236,7 +237,7 @@ shadow_enabled = true
 [node name="Posessables" type="Node" parent="."]
 
 [node name="Plank" type="RigidBody3D" parent="Posessables"]
-transform = Transform3D(0.999578, 0.0290209, 0, -0.0290209, 0.999578, 0, 0, 0, 1, 8.72773, 9.90656, -0.60052)
+transform = Transform3D(0.999578, 0.0290209, 0, -0.0290209, 0.999578, 0, 0, 0, 1, -7.33421, 0.418132, -3.24122)
 collision_mask = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -299,7 +300,7 @@ mesh = SubResource("ArrayMesh_f2txt")
 shape = SubResource("ConvexPolygonShape3D_1ainy")
 
 [node name="Box" type="RigidBody3D" parent="Posessables"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96038, 1.75168, -1.44657)
+transform = Transform3D(0.968761, 0, 0.247997, 0, 1, 0, -0.247997, 0, 0.968761, -0.518481, 0.671739, -7.00061)
 collision_mask = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -317,6 +318,44 @@ mesh = SubResource("ArrayMesh_0b4ue")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Box"]
 shape = SubResource("ConvexPolygonShape3D_f2txt")
 
+[node name="Box2" type="RigidBody3D" parent="Posessables"]
+transform = Transform3D(0.999523, 0, -0.0308874, 0, 1, 0, 0.0308874, 0, 0.999523, 0.731566, 0.671739, -7.00061)
+collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+script = ExtResource("3_oi3di")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/Box2"]
+mesh = SubResource("BoxMesh_0b4ue")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="Highlight" type="MeshInstance3D" parent="Posessables/Box2/MeshInstance3D"]
+visible = false
+mesh = SubResource("ArrayMesh_0b4ue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Box2"]
+shape = SubResource("ConvexPolygonShape3D_f2txt")
+
+[node name="Box3" type="RigidBody3D" parent="Posessables"]
+transform = Transform3D(0.999527, 0, 0.0307653, 0, 1, 0, -0.0307653, 0, 0.999527, 0.0302352, 1.72444, -7.00271)
+collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+script = ExtResource("3_oi3di")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/Box3"]
+mesh = SubResource("BoxMesh_0b4ue")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="Highlight" type="MeshInstance3D" parent="Posessables/Box3/MeshInstance3D"]
+visible = false
+mesh = SubResource("ArrayMesh_0b4ue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Box3"]
+shape = SubResource("ConvexPolygonShape3D_f2txt")
+
 [node name="Possessable" parent="Posessables" instance=ExtResource("7_n6hdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 7.9, -5.1)
 
@@ -328,7 +367,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_mleqk")
 
 [node name="Possessable2" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.2, 1.1, -0.7)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.2, 1.1, -1.99029)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable2" index="0"]
 mesh = ExtResource("10_42xju")
@@ -339,6 +378,8 @@ shape = SubResource("ConvexPolygonShape3D_6btg4")
 
 [node name="Possessable3" parent="Posessables" instance=ExtResource("7_n6hdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 10.2, -4.5)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 
 [node name="MeshInstance3D" parent="Posessables/Possessable3" index="0"]
 mesh = ExtResource("4_f2txt")
@@ -358,7 +399,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_dtg4e")
 
 [node name="Possessable5" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.1, 1.1, -0.1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.1, 1.1, -1.39029)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable5" index="0"]
 mesh = ExtResource("12_ilwjd")
@@ -388,7 +429,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_0mnfp")
 
 [node name="Possessable12" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 1.3, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09296, 1.3, 3.04642)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable12" index="0"]
 mesh = ExtResource("13_y3bce")
@@ -398,7 +439,9 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_0mnfp")
 
 [node name="Possessable7" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.6, 1.2, 1.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.14878, 1.2, -1.56506)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 
 [node name="MeshInstance3D" parent="Posessables/Possessable7" index="0"]
 mesh = ExtResource("14_u3yai")
@@ -408,7 +451,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_qw2y7")
 
 [node name="Possessable8" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 1.2, 3.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09296, 1.2, 3.14642)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable8" index="0"]
 mesh = ExtResource("15_fj6e6")
@@ -419,6 +462,8 @@ shape = SubResource("ConvexPolygonShape3D_uuqa8")
 
 [node name="Possessable9" parent="Posessables" instance=ExtResource("7_n6hdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 1.1, -0.7)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 
 [node name="MeshInstance3D" parent="Posessables/Possessable9" index="0"]
 mesh = ExtResource("16_2h3vt")
@@ -438,7 +483,7 @@ surface_material_override/0 = ExtResource("6_ait7k")
 shape = SubResource("ConvexPolygonShape3D_oaehd")
 
 [node name="Possessable11" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 1.1, -0.3)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 1.1, -1.59029)
 
 [node name="MeshInstance3D" parent="Posessables/Possessable11" index="0"]
 mesh = ExtResource("18_hvubb")
@@ -597,6 +642,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5239, 10.7681, -7.55953)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34314, 0.370178, 0)
 shape = SubResource("BoxShape3D_n6hdu")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_42xju")
+volume_db = -25.0
+autoplay = true
+
 [connection signal="mouse_entered" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Posessables/Plank" to="Posessables/Plank" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Posessables/FileCabinet" to="Posessables/FileCabinet" method="_on_mouse_entered"]
@@ -605,6 +655,10 @@ shape = SubResource("BoxShape3D_n6hdu")
 [connection signal="mouse_exited" from="Posessables/FileCabinet2" to="Posessables/FileCabinet2" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Posessables/Box" to="Posessables/Box" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Posessables/Box" to="Posessables/Box" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Posessables/Box2" to="Posessables/Box2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Posessables/Box2" to="Posessables/Box2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Posessables/Box3" to="Posessables/Box3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Posessables/Box3" to="Posessables/Box3" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/WinMenu/Panel/ButtonAgain" to="." method="_on_button_again_pressed"]
 [connection signal="pressed" from="CanvasLayer/WinMenu/Panel/ButtonQuit" to="." method="_on_button_quit_pressed"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]

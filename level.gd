@@ -11,4 +11,3 @@ func _on_button_quit_pressed() -> void:
 func _on_win_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		win_menu.visible = true
-	pass # Replace with function body.

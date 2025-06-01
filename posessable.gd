@@ -23,7 +23,7 @@ func _ready() -> void:
 	# USE THIS FOR OUTLINE MESH
 	if !highlight.mesh:
 		highlight.mesh = mesh_instance_3d.mesh.create_outline(0.1)
-	
+		highlight.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
