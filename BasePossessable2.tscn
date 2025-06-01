@@ -5,6 +5,7 @@
 
 [node name="Possessable" type="RigidBody3D"]
 script = ExtResource("1_mmykw")
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 

@@ -1,15 +1,30 @@
-[gd_scene load_steps=24 format=4 uid="uid://cmimn1y5jvm0l"]
+[gd_scene load_steps=48 format=4 uid="uid://cmimn1y5jvm0l"]
 
 [ext_resource type="Script" uid="uid://qf3yjae6so34" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="Script" uid="uid://dklv762g16xd7" path="res://player.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://b1kfpqn8cmhhl" path="res://character_rig.gd" id="1_vonw3"]
+[ext_resource type="Texture2D" uid="uid://6yn125w6x1es" path="res://CrossingLatitudes3DAssets_Checker.png" id="3_4c15r"]
 [ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="3_oi3di"]
 [ext_resource type="ArrayMesh" uid="uid://bm3wpcikwab8u" path="res://3D Assets/CL3D_Door.obj" id="4_f2txt"]
 [ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="5_1ainy"]
+[ext_resource type="Material" uid="uid://7tdhwampti3o" path="res://Mat_Gradient.tres" id="6_ait7k"]
 [ext_resource type="PackedScene" uid="uid://be4xjuh7q06d2" path="res://BasePossessable2.tscn" id="7_n6hdu"]
+[ext_resource type="ArrayMesh" uid="uid://6d06ibgv35mv" path="res://3D Assets/CL3D_BaseCube.obj" id="9_ait7k"]
+[ext_resource type="ArrayMesh" uid="uid://dnnmd1v4oodwf" path="res://3D Assets/CL3D_Computer.obj" id="10_42xju"]
+[ext_resource type="ArrayMesh" uid="uid://cvc1tap8735jn" path="res://3D Assets/CL3D_Gaveta.obj" id="11_v7sqt"]
+[ext_resource type="ArrayMesh" uid="uid://dmx2mcfdwh31w" path="res://3D Assets/CL3D_Keyboard.obj" id="12_ilwjd"]
+[ext_resource type="ArrayMesh" uid="uid://dmvosesvdr4o0" path="res://3D Assets/CL3D_Mug.obj" id="13_y3bce"]
+[ext_resource type="ArrayMesh" uid="uid://blexpbpjjih5s" path="res://3D Assets/CL3D_Ramp.obj" id="14_u3yai"]
+[ext_resource type="ArrayMesh" uid="uid://cqghdtw0cgq82" path="res://3D Assets/CL3D_Table1.obj" id="15_fj6e6"]
+[ext_resource type="ArrayMesh" uid="uid://pkyekqswi6i3" path="res://3D Assets/CL3D_Table2.obj" id="16_2h3vt"]
+[ext_resource type="ArrayMesh" uid="uid://dh53yttd8160f" path="res://3D Assets/CL3D_Table3.obj" id="17_yjxuc"]
+[ext_resource type="ArrayMesh" uid="uid://bk310bbwbwjhg" path="res://3D Assets/CL3D_Table4.obj" id="18_hvubb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ainy"]
 size = Vector3(22, 12, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoqsc"]
+albedo_texture = ExtResource("3_4c15r")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vonw3"]
 
@@ -69,6 +84,39 @@ _surfaces = [{
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f2txt"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mleqk"]
+points = PackedVector3Array(1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1, -1, -1, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6btg4"]
+points = PackedVector3Array(-0.371397, 0.185682, 0.235026, -0.325881, 0.185682, 0.0295174, -0.166067, 0, -0.166043, -0.166067, 0, 0.165971, 0.371397, 0.185682, 0.235026, -7.27177e-05, 0.371364, 0.266335, -7.27177e-05, 0.557045, 0.289549, -0.185771, 0.557045, 0.266335, -0.371397, 0.9285, 0.235026, -0.325881, 0.882875, 0.0295174, -0.19137, 0.264844, -0.208666, 0.165994, 0, -0.166043, 0.165994, 0, 0.165971, 0.325808, 0.185682, 0.0295174, 0.371397, 0.9285, 0.235026, 0.185626, 0.557045, 0.266335, -7.27177e-05, 0.742727, 0.266335, 0.325808, 0.882875, 0.0295174, -0.19137, 0.69692, -0.208666, 0.191297, 0.264844, -0.208666, 0.191297, 0.69692, -0.208666)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sl4om"]
+points = PackedVector3Array(-2, -0.1, -1, -2, -0.1, 1, -2, 0.1, -1, 2, -0.1, -1, -2, 0.1, 1, 2, -0.1, 1, 2, 0.1, -1, 2, 0.1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dtg4e"]
+points = PackedVector3Array(0.43397, 0.216985, 0.471764, -0.43397, 0.216985, 0.471764, 0.43397, -0.216985, 0.471764, 0.43397, 0.216985, -0.471764, -0.43397, -0.216985, 0.471764, -0.43397, 0.216985, -0.471764, 0.43397, -0.216985, -0.471764, -0.43397, -0.216985, -0.471764)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ut2i6"]
+points = PackedVector3Array(-0.468943, 0, -0.183639, -0.468943, 0, 0.183639, -0.468943, 0.066382, -0.183639, 0.468943, 0, -0.183639, -0.468943, 0.0235092, 0.183639, 0.468943, 0, 0.183639, 0.468943, 0.066382, -0.183639, 0.468943, 0.0235092, 0.183639)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0mnfp"]
+points = PackedVector3Array(0.0816809, 0.16337, 0, 0.0754585, 0.16337, -0.0312635, 0.0754585, 0.16337, 0.0312475, 0.129605, 0.129596, 0, 0.0577417, 0.16337, -0.0577616, 0.0577417, 0.16337, 0.0577456, 0.149471, 0.081685, 0, 0.0312456, 0.16337, -0.0754803, 0.137954, 0.081685, -0.0112581, 0.0312456, 0.16337, 0.0754643, 0.137954, 0.081685, 0.0112421, 0.0577417, 0, 0.0577456, 0.129605, 0.0337582, 0, 0.0577417, 0, -0.0577616, 0.0312456, 0, -0.0754803, -2.04146e-06, 0.16337, -0.081685, 0.0312456, 0, 0.0754643, -2.04146e-06, 0.16337, 0.081685, 0.0754585, 0, 0.0312475, 0.0816809, 0, 0, 0.0754585, 0, -0.0312635, -2.04146e-06, 0, -0.081685, -0.0312724, 0.16337, -0.0754803, -2.04146e-06, 0, 0.081685, -0.0312724, 0.16337, 0.0754643, -0.0312724, 0, -0.0754803, -0.0577684, 0.16337, -0.0577616, -0.0312724, 0, 0.0754643, -0.0577684, 0.16337, 0.0577456, -0.0577684, 0, -0.0577616, -0.0754852, 0.16337, -0.0312635, -0.0577684, 0, 0.0577456, -0.0754852, 0.16337, 0.0312475, -0.0754852, 0, -0.0312635, -0.081685, 0.16337, 0, -0.0754852, 0, 0.0312475, -0.081685, 0, 0)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qw2y7"]
+points = PackedVector3Array(-1, 1, 1, 1, -1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, -1, -1, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uuqa8"]
+points = PackedVector3Array(-1, -1, -1, -1, -1, 1, -1, 0, -1, 1, -1, -1, -1, 0, 1, 1, -1, 1, 1, 0, -1, 1, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_samc1"]
+points = PackedVector3Array(-1.625, -1, -1, -1.625, -1, 1, -1.625, 0, -1, 1.625, -1, -1, -1.625, 0, 1, 1.625, -1, 1, 1.625, 0, -1, 1.625, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oaehd"]
+points = PackedVector3Array(-1, -1, -0.75, -1, -1, 0.75, -1, 0, -0.75, 1, -1, -0.75, -1, 0, 0.75, 1, -1, 0.75, 1, 0, -0.75, 1, 0, 0.75)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f8y3u"]
+points = PackedVector3Array(-1.625, -1, -0.75, -1.625, -1, 0.75, -1.625, 0, -0.75, 1.625, -1, -0.75, -1.625, 0, 0.75, 1.625, -1, 0.75, 1.625, 0, -0.75, 1.625, 0, 0.75)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ainy"]
 bg_color = Color(0, 0, 0, 0.298039)
@@ -141,6 +189,7 @@ size = Vector3(3.9, 1, 5)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.20967, 11.5718, -7.68285)
+material_override = SubResource("StandardMaterial3D_aoqsc")
 use_collision = true
 size = Vector3(2.4939, 4.17584, 0.498535)
 
@@ -170,6 +219,7 @@ shape = SubResource("CapsuleShape3D_vonw3")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterRig/CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_oi3di")
+surface_material_override/0 = ExtResource("6_ait7k")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterRig"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 6.181, 10.66)
@@ -188,7 +238,7 @@ shadow_enabled = true
 [node name="Posessables" type="Node" parent="."]
 
 [node name="Plank" type="RigidBody3D" parent="Posessables"]
-transform = Transform3D(0.999578, 0.0290209, 0, -0.0290209, 0.999578, 0, 0, 0, 1, 8.72773, 9.90656, -5.40052)
+transform = Transform3D(0.999578, 0.0290209, 0, -0.0290209, 0.999578, 0, 0, 0, 1, 8.72773, 9.90656, -0.60052)
 collision_mask = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -198,7 +248,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/Plank"]
 mesh = ExtResource("4_f2txt")
-surface_material_override/0 = ExtResource("5_1ainy")
+surface_material_override/0 = ExtResource("6_ait7k")
 metadata/_edit_lock_ = true
 
 [node name="Highlight" type="MeshInstance3D" parent="Posessables/Plank/MeshInstance3D"]
@@ -219,6 +269,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/FileCabinet"]
 mesh = SubResource("BoxMesh_oi3di")
+surface_material_override/0 = ExtResource("6_ait7k")
 metadata/_edit_lock_ = true
 
 [node name="Highlight" type="MeshInstance3D" parent="Posessables/FileCabinet/MeshInstance3D"]
@@ -239,6 +290,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/FileCabinet2"]
 mesh = SubResource("BoxMesh_oi3di")
+surface_material_override/0 = ExtResource("6_ait7k")
 metadata/_edit_lock_ = true
 
 [node name="Highlight" type="MeshInstance3D" parent="Posessables/FileCabinet2/MeshInstance3D"]
@@ -258,6 +310,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Posessables/Box"]
 mesh = SubResource("BoxMesh_0b4ue")
+surface_material_override/0 = ExtResource("6_ait7k")
 
 [node name="Highlight" type="MeshInstance3D" parent="Posessables/Box/MeshInstance3D"]
 visible = false
@@ -267,6 +320,114 @@ mesh = SubResource("ArrayMesh_0b4ue")
 shape = SubResource("ConvexPolygonShape3D_f2txt")
 
 [node name="Possessable" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 7.9, -5.1)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable" index="0"]
+mesh = ExtResource("9_ait7k")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable"]
+shape = SubResource("ConvexPolygonShape3D_mleqk")
+
+[node name="Possessable2" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 7.9, 1.9)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable2" index="0"]
+mesh = ExtResource("10_42xju")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable2"]
+shape = SubResource("ConvexPolygonShape3D_6btg4")
+
+[node name="Possessable3" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 10.2, -4.5)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable3" index="0"]
+mesh = ExtResource("4_f2txt")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable3"]
+shape = SubResource("ConvexPolygonShape3D_sl4om")
+
+[node name="Possessable4" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 7.9, -1.2)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable4" index="0"]
+mesh = ExtResource("11_v7sqt")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable4"]
+shape = SubResource("ConvexPolygonShape3D_dtg4e")
+
+[node name="Possessable5" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 7.9, 2.5)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable5" index="0"]
+mesh = ExtResource("12_ilwjd")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable5"]
+shape = SubResource("ConvexPolygonShape3D_ut2i6")
+
+[node name="Possessable6" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 5.8, -0.8)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable6" index="0"]
+mesh = ExtResource("13_y3bce")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable6"]
+shape = SubResource("ConvexPolygonShape3D_0mnfp")
+
+[node name="Possessable7" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.6, 4, 1.5)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable7" index="0"]
+mesh = ExtResource("14_u3yai")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable7"]
+shape = SubResource("ConvexPolygonShape3D_qw2y7")
+
+[node name="Possessable8" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8, 1.5, 3.7)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable8" index="0"]
+mesh = ExtResource("15_fj6e6")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable8"]
+shape = SubResource("ConvexPolygonShape3D_uuqa8")
+
+[node name="Possessable9" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 5.6, -0.7)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable9" index="0"]
+mesh = ExtResource("16_2h3vt")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable9"]
+shape = SubResource("ConvexPolygonShape3D_samc1")
+
+[node name="Possessable10" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 9.3, 1.1)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable10" index="0"]
+mesh = ExtResource("17_yjxuc")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable10"]
+shape = SubResource("ConvexPolygonShape3D_oaehd")
+
+[node name="Possessable11" parent="Posessables" instance=ExtResource("7_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 7.9, 2.3)
+
+[node name="MeshInstance3D" parent="Posessables/Possessable11" index="0"]
+mesh = ExtResource("18_hvubb")
+surface_material_override/0 = ExtResource("6_ait7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable11"]
+shape = SubResource("ConvexPolygonShape3D_f8y3u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -369,3 +530,15 @@ shape = SubResource("BoxShape3D_n6hdu")
 [connection signal="pressed" from="CanvasLayer/WinMenu/Panel/ButtonAgain" to="." method="_on_button_again_pressed"]
 [connection signal="pressed" from="CanvasLayer/WinMenu/Panel/ButtonQuit" to="." method="_on_button_quit_pressed"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
+
+[editable path="Posessables/Possessable"]
+[editable path="Posessables/Possessable2"]
+[editable path="Posessables/Possessable3"]
+[editable path="Posessables/Possessable4"]
+[editable path="Posessables/Possessable5"]
+[editable path="Posessables/Possessable6"]
+[editable path="Posessables/Possessable7"]
+[editable path="Posessables/Possessable8"]
+[editable path="Posessables/Possessable9"]
+[editable path="Posessables/Possessable10"]
+[editable path="Posessables/Possessable11"]
