@@ -72,8 +72,8 @@ func handle_states(delta) -> void:
 				velocity.z = lerp(velocity.z, 0.0, delta * 6)
 				
 				if direction:
-					possession_target.linear_velocity.x = direction.x * move_speed
-					possession_target.linear_velocity.z = direction.z * move_speed
+					possession_target.linear_velocity.x = direction.x * (move_speed / 2)
+					possession_target.linear_velocity.z = direction.z * (move_speed / 2)
 				else:
 					possession_target.linear_velocity.x = move_toward(possession_target.linear_velocity.x, 0, delta * 12)
 					possession_target.linear_velocity.z = move_toward(possession_target.linear_velocity.z, 0, delta * 12)

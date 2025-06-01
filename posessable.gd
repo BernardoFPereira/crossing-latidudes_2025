@@ -21,7 +21,8 @@ func _ready() -> void:
 	state = States.IDLE
 	
 	# USE THIS FOR OUTLINE MESH
-	#mesh_instance_3d.mesh.create_outline(0.1)
+	if !highlight.mesh:
+		highlight.mesh = mesh_instance_3d.mesh.create_outline(0.1)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -43,7 +44,7 @@ func handle_states(delta):
 		States.IDLE:
 			pass
 		States.POSSESSED:
-			rotation.move_toward(Vector3.ZERO, delta * 4)
+			rotation.move_toward(Vector3.ZERO, delta * 8)
 			# Make thing float
 			#recalculate_height(delta)
 			pass
