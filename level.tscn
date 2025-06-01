@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://3gpcnxge0j63" path="res://posessable.gd" id="3_oi3di"]
 [ext_resource type="ArrayMesh" uid="uid://bm3wpcikwab8u" path="res://3D Assets/CL3D_Door.obj" id="4_f2txt"]
 [ext_resource type="Material" uid="uid://dor6v3tff8rb6" path="res://3D Assets/MatChecker.tres" id="5_1ainy"]
-[ext_resource type="Material" path="res://Mat_Gradient.tres" id="6_ait7k"]
+[ext_resource type="Material" uid="uid://7tdhwampti3o" path="res://Mat_Gradient.tres" id="6_ait7k"]
 [ext_resource type="PackedScene" uid="uid://be4xjuh7q06d2" path="res://BasePossessable2.tscn" id="7_n6hdu"]
 [ext_resource type="ArrayMesh" uid="uid://6d06ibgv35mv" path="res://3D Assets/CL3D_BaseCube.obj" id="9_ait7k"]
 [ext_resource type="ArrayMesh" uid="uid://dnnmd1v4oodwf" path="res://3D Assets/CL3D_Computer.obj" id="10_42xju"]

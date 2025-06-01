@@ -1,7 +1,7 @@
 shader_type spatial;
 
-uniform vec4 color_bottom : source_color = vec4(0.0, 0.0, 0.0, 0.8);
-uniform vec4 color_top    : source_color = vec4(0.0, 0.0, 0.0, 0.0);
+uniform vec3 color_bottom : source_color = vec3(0.0, 0.0, 0.0);
+uniform vec3 color_top    : source_color = vec3(0.0, 0.0, 0.0);
 
 uniform float min_height = 0.0;
 uniform float max_height = 3.0;
@@ -18,5 +18,4 @@ void fragment() {
 	float factor = clamp((height - min_height) / (max_height - min_height), 0.0, 100.0);
 
 	ALBEDO = mix(color_bottom.rgb, color_top.rgb, factor);
-	ALPHA = mix(color_bottom.a, color_top.a, factor);
 }
