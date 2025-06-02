@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cmimn1y5jvm0l"]
+[gd_scene load_steps=47 format=4 uid="uid://cmimn1y5jvm0l"]
 
 [ext_resource type="Script" uid="uid://qf3yjae6so34" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="Script" uid="uid://dklv762g16xd7" path="res://player.gd" id="1_u52ul"]
@@ -88,9 +88,6 @@ points = PackedVector3Array(1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6btg4"]
 points = PackedVector3Array(-0.371397, 0.185682, 0.235026, -0.325881, 0.185682, 0.0295174, -0.166067, 0, -0.166043, -0.166067, 0, 0.165971, 0.371397, 0.185682, 0.235026, -7.27177e-05, 0.371364, 0.266335, -7.27177e-05, 0.557045, 0.289549, -0.185771, 0.557045, 0.266335, -0.371397, 0.9285, 0.235026, -0.325881, 0.882875, 0.0295174, -0.19137, 0.264844, -0.208666, 0.165994, 0, -0.166043, 0.165994, 0, 0.165971, 0.325808, 0.185682, 0.0295174, 0.371397, 0.9285, 0.235026, 0.185626, 0.557045, 0.266335, -7.27177e-05, 0.742727, 0.266335, 0.325808, 0.882875, 0.0295174, -0.19137, 0.69692, -0.208666, 0.191297, 0.264844, -0.208666, 0.191297, 0.69692, -0.208666)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sl4om"]
-points = PackedVector3Array(-2, -0.1, -1, -2, -0.1, 1, -2, 0.1, -1, 2, -0.1, -1, -2, 0.1, 1, 2, -0.1, 1, 2, 0.1, -1, 2, 0.1, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dtg4e"]
 points = PackedVector3Array(0.43397, 0.216985, 0.471764, -0.43397, 0.216985, 0.471764, 0.43397, -0.216985, 0.471764, 0.43397, 0.216985, -0.471764, -0.43397, -0.216985, 0.471764, -0.43397, 0.216985, -0.471764, 0.43397, -0.216985, -0.471764, -0.43397, -0.216985, -0.471764)
@@ -381,18 +378,6 @@ surface_material_override/0 = ExtResource("6_ait7k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable2"]
 shape = SubResource("ConvexPolygonShape3D_6btg4")
-
-[node name="Possessable3" parent="Posessables" instance=ExtResource("7_n6hdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 10.2, -4.5)
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-
-[node name="MeshInstance3D" parent="Posessables/Possessable3" index="0"]
-mesh = ExtResource("4_f2txt")
-surface_material_override/0 = ExtResource("6_ait7k")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Posessables/Possessable3"]
-shape = SubResource("ConvexPolygonShape3D_sl4om")
 
 [node name="Possessable4" parent="Posessables" instance=ExtResource("7_n6hdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.4, -0.9)
@@ -689,7 +674,6 @@ spot_angle_attenuation = 0.63728
 
 [editable path="Posessables/Possessable"]
 [editable path="Posessables/Possessable2"]
-[editable path="Posessables/Possessable3"]
 [editable path="Posessables/Possessable4"]
 [editable path="Posessables/Possessable5"]
 [editable path="Posessables/Possessable6"]
